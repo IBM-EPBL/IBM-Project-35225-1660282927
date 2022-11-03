@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse("Hello, World. You're at the app index.")
+def home_view(request, *args, **kwargs):
+
+    context = {}
+
+    return render(request, "app/home.html", context)
 
