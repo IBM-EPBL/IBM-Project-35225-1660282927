@@ -35,7 +35,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user != None:
             login(request, user)
-            return HttpResponseRedirect(reverse('app:home'))
+            return HttpResponseRedirect(reverse('accounts:login'))
     context = {
         "form": form
     }
