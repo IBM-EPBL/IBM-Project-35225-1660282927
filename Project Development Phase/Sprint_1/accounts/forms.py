@@ -4,7 +4,7 @@ from django import forms
 User = get_user_model()
 
 class RegisterForm(forms.Form):
-    username = forms.CharField(max_length=255, required=False, widget=forms.TextInput( attrs={
+    username = forms.CharField(max_length=255, widget=forms.TextInput( attrs={
                 "class": "form-control"
     }))
     email = forms.EmailField(max_length=255, widget=forms.TextInput( attrs={
@@ -48,13 +48,15 @@ class RegisterForm(forms.Form):
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label="Username",widget=forms.TextInput( attrs={
+    username = forms.CharField(label="",widget=forms.TextInput( attrs={
+                "placeholder": "Enter Username",
                 "class": "form-control"
     }))
-    password = forms.CharField(
+    password = forms.CharField(label="",
         widget=forms.PasswordInput(
             attrs={
-                "class": "form-control",
+                "placeholder": "Enter Password",
+                "class": "form-control mt-4",
                 "id": "user-password"
     }))
 
