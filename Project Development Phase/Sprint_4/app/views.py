@@ -28,7 +28,7 @@ def extract_view(request, *args, **kwargs):
 
     return render(request, "app/extract.html", context)
 
-
+@login_required
 def result_view(request, *args, **kwargs):
     print(request.path)
     var = request.path
